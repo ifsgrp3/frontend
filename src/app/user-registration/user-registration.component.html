@@ -1,0 +1,128 @@
+<!-- <div class="m-subheader" sticky-header>
+	<div class="row">
+		<div class="col-sm-12 col-lg-6 col-xl-6">
+			<h3 class="m-subheader__title">
+				{{ 'Angular Form'  }}
+			</h3>
+		</div>
+		<div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">
+			<button class="btn btn-primary m-btn" (click)="noSubmit()">
+				{{ 'Submit'  }}
+			</button>
+		</div>
+	</div>
+</div> -->
+
+
+<div class="main-content">
+    <div class="m-portlet m-portlet--mobile">
+        <div class="m-portlet__body">
+			<div class="m-form__section m-form__section--first">
+				<div class="form-group m-form__group row">
+					<div class="col-12">
+						<!-- <div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">
+							<button class="btn btn-primary m-btn" (click)="noSubmit()">
+								{{ 'Submit'  }}
+							</button>
+						</div> -->
+						<div class="row">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'First Name'  }}</label>
+								<input class="form-control m-input" formControlName="name" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Last Name' }}</label>
+								<input class="form-control m-input"/>
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-4 col-xl-4" >
+								<label>{{ 'Address'  }}</label>
+								<input class="form-control m-input" formControlName="name" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+							<div class="col-sm-12 col-lg-4 col-xl-4" >
+								<label>{{ 'Area (NSEWC)' }}</label>
+								<input class="form-control m-input"/>
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+							<div class="col-sm-12 col-lg-4 col-xl-4" >
+								<label>{{ 'Zip Code' }}</label>
+								<input class="form-control m-input"/>
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Contact Number'  }}</label>
+								<input class="form-control m-input" formControlName="name" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label style="width: 100%;">{{ 'Gender' }}</label>
+								<select style="width: 25%;" name="gender" id="gender">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'NRIC'  }}</label>
+								<input class="form-control m-input" formControlName="name" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label style="width: 100%;">{{ 'Role' }}</label>
+								<select style="width: 50%;" name="roler" id="role">
+									<option value="public">Public</option>
+									<option value="admin">System Admin</option>
+									<option value="personnel">COVID-19 Personnel</option>
+								</select>
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Race'  }}</label>
+								<input class="form-control m-input" formControlName="name" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Token Device ID' }}</label>
+								<input class="form-control m-input"/>
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">
+								<button class="btn btn-primary m-btn">
+									{{ 'Submit' }}
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

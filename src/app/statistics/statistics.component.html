@@ -1,0 +1,56 @@
+<div class="main-content">
+    <p style="text-align: center;">What would you like to know?</p>
+    <br>
+    <div style="padding-left: 20px;" class="row">
+        <p>I want to find out</p>
+        <div class="col">
+            <select name="data" id="data">
+                <option value="rate">Vaccination Rate</option>
+                <option value="cases">Covid-19 Cases</option>
+            </select>
+        </div>
+    </div>
+    <div style="padding-left: 20px;" class="row">
+        <p>Please select the following filters</p>
+    </div>
+    <div class="row">
+        <div style="text-align: center;" class="col">
+            <select name="location" id="location">
+                <option value="" hidden>Location</option>
+                <option value="central">Central</option>
+                <option value="north">North</option>
+                <option value="west">West</option>
+                <option value="east">East</option>
+                <option value="south">South</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center; padding-top: 20px;" class="col">
+            <select name="gender" id="gender">
+                <option value="" hidden>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center; padding-top: 20px;" class="col">
+            <select name="age" id="age">
+                <option value="" hidden>Age</option>
+                <option value="20-below">20 and below</option>
+                <option value="21-40">21-40</option>
+                <option value="41-60">41-60</option>
+                <option value="61-80">61-80</option>
+                <option value="81-above">81 and above</option>
+            </select>
+        </div>
+    </div>
+    <div class="row m--margin-top-20">
+        <div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">
+            <button class="btn btn-primary m-btn">
+                {{ 'Submit' }}
+            </button>
+        </div>
+    </div>
+</div>
