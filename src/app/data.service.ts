@@ -43,7 +43,11 @@ export class DataService {
   }
 
   deactivateAccount(data) {
-    return this.http.post(`http://localhost:3000/acc/deact`, data);
+    return this.http.post(`http://localhost:3000/auth/acc/deact`, data);
+  }
+
+  getMenuItems() {
+    return this.http.get(`http://localhost:3000/auth/items`);
   }
 
   // Records DB

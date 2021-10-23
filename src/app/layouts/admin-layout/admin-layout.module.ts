@@ -47,7 +47,6 @@ import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-decl
     TableListComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
     Covid19TestComponent,

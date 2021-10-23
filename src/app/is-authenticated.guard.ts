@@ -17,7 +17,7 @@ export class IsAuthenticatedGuard implements CanActivate {
     const isAuthenticated = this.dataService.isAuthenticated();
     if (!isAuthenticated) {
       localStorage.clear();
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     }
     return isAuthenticated;
   }

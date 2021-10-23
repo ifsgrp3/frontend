@@ -14,8 +14,8 @@ import { DataService } from 'app/data.service';
 export class Covid19TestComponent implements OnInit {
 
     form: any;
-    result = 0;
-    type = 0;
+    result;
+    type;
 
     constructor(
         private dataService: DataService) { }
