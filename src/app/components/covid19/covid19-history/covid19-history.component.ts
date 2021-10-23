@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'app/data.service';
 
 @Component({
   selector: 'app-covid19-history',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Covid19HistoryComponent implements OnInit {
 
-  constructor() { }
+  history = [];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getCovidTest().subscribe((res: any) => {
+      this.history = res.data;
+    })
   }
 
 }

@@ -12,7 +12,7 @@
 						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'Date of declaration'  }} *</label>
-								<input class="form-control m-input" formControlName="name" />
+								<input class="form-control m-input" [(ngModel)]="date" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
@@ -20,21 +20,27 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Symptoms'  }} *</label>
-								<form>
-									<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-									<label for="vehicle1"> I have a bike</label><br>
-									<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-									<label for="vehicle2"> I have a car</label><br>
-									<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-									<label for="vehicle3"> I have a boat</label><br><br>
+								<label>{{ 'COVID Symptoms'  }} *</label>
+									<select [(ngModel)]="symptoms">
+										<option value="1">Yes</option>
+										<option value="0">No</option>
+									</select>
 									<!-- <input type="submit" value="Submit"> -->
-							  </form>
+							  
+							</div>
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Temperature'  }} *</label>
+								<input class="form-control m-input" [(ngModel)]="temperature" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+									<!-- <input type="submit" value="Submit"> -->
+							  
 							</div>
 						</div>
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">
-								<button class="btn btn-primary m-btn">
+								<button class="btn btn-primary m-btn" (click)="onSubmit()">
 									{{ 'Submit' }}
 								</button>
 							</div>
