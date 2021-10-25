@@ -42,7 +42,7 @@
                                 </select>
 							</div>
 						</div>
-                        <div class="row m--margin-top-20">
+                        <!-- <div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'First dose'  }}</label>
 								<input type="checkbox" id="dose1" name="dose1" value="1">
@@ -51,17 +51,17 @@
 								<label>{{ 'Second dose' }}</label>
 								<input type="checkbox" id="dose2" name="dose2" value="1">
 							</div>
-						</div>
+						</div> -->
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Date of first dose'  }}</label>
+								<label>{{ 'Date of first dose (YYYY-MM-DD)'  }}</label>
 								<input class="form-control m-input" [(ngModel)]="data.first_dose_date" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Date of second dose' }}</label>
+								<label>{{ 'Date of second dose (YYYY-MM-DD)' }}</label>
 								<input class="form-control m-input" [(ngModel)]="data.second_dose_date"/>
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}

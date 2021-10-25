@@ -86,9 +86,9 @@
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label style="width: 100%;">{{ 'Role' }}</label>
 								<select style="width: 50%;" name="roler" id="role" formControlName="role">
-									<option value="public">Public</option>
-									<option value="admin">System Admin</option>
-									<option value="personnel">COVID-19 Personnel</option>
+									<option value="3">Public</option>
+									<option value="1">System Admin</option>
+									<option value="2">COVID-19 Personnel</option>
 								</select>
 							</div>
 						</div>
@@ -100,13 +100,22 @@
 									{{ 'This field is required'  }}
 								</span>
 							</div>
-							<!-- <div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Token Device ID' }}</label>
-								<input class="form-control m-input"/>
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'BLE Device Serial Number' }}</label>
+								<input class="form-control m-input" formControlName="ble_serial_number"/>
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
-							</div> -->
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Password'  }}</label>
+								<input class="form-control m-input" type="password" formControlName="password" />
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
 						</div>
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">

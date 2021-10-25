@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Account Logs</h4>
+                        <h4 class="card-title ">Account Management</h4>
                         <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                     </div>
                     <div class="card-body">
@@ -33,7 +33,7 @@
                                             {{ a.nric }}
                                         </td>
                                         <td>
-                                            {{ a.account_role == 1? "User" : (a.account_role == 2)? "Admin": "COVID Personnel" }}
+                                            {{ a.account_role == 1? "Admin" : (a.account_role == 2)? "COVID Personnel": "Public user" }}
                                         </td>
                                         <td>
                                             {{ a.account_status == "1"? "Active" : "Inactive" }}

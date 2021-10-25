@@ -11,23 +11,23 @@
 						</div> -->
 						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Date of declaration'  }} *</label>
+								<label>{{ 'Date of declaration (YYYY-MM-DD)'  }} *</label>
 								<input class="form-control m-input" [(ngModel)]="date" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
-						</div>
-						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'COVID Symptoms'  }} *</label>
-									<select [(ngModel)]="symptoms">
+								<label style="width: 100%;">{{ 'COVID Symptoms'  }} *</label>
+									<select [(ngModel)]="symptoms" style="width: 15%;">
 										<option value="1">Yes</option>
 										<option value="0">No</option>
 									</select>
 									<!-- <input type="submit" value="Submit"> -->
 							  
 							</div>
+						</div>
+						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'Temperature'  }} *</label>
 								<input class="form-control m-input" [(ngModel)]="temperature" />

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'app/data.service';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-user-registration',
@@ -26,13 +27,28 @@ export class UserRegistrationComponent implements OnInit {
         gender: new FormControl(null, Validators.required),
         nric: new FormControl(null, Validators.required),
         role: new FormControl(null),
-        race: new FormControl(null, Validators.required)
+        race: new FormControl(null, Validators.required),
+        ble_serial_number: new FormControl(null, Validators.required),
+        password: new FormControl(null, Validators.required)
     })
   }
 
   onSubmit() {
     this.form.value.gender = (this.form.value.gender == "Male")? 0 : 1
     this.dataService.recordRegister(this.form.value).subscribe((res: any) => {
+      console.log(res);
+    })
+    const salt = bcrypt.genSaltSync(10);
+    let hashed_password = bcrypt.hashSync(this.form.value.password, salt);
+    let registerData = {
+      nric: this.form.value.nric,
+      hashed_password: hashed_password,
+      user_salt: salt,
+      ble_serial_number: this.form.value.ble_serial_number,
+      account_role: this.form.value.role
+    }
+    console.log(registerData)
+    this.dataService.register(registerData).subscribe((res: any) => {
       console.log(res);
     })
   }

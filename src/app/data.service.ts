@@ -19,76 +19,84 @@ export class DataService {
   }
   // Credentials DB
   getAllAccounts() {
-    return this.http.get(`http://localhost:3000/auth/accs`);
+    return this.http.get(`${environment["apiUrl"]}/auth/accs`);
   }
 
   login(data) {
-    return this.http.post(`http://localhost:3000/auth/login`, data);
+    return this.http.post(`${environment["apiUrl"]}/auth/login`, data);
+  }
+
+  logout() {
+    return this.http.get(`${environment["apiUrl"]}/auth/logout`);
   }
 
   register(data) {
-    return this.http.post(`http://localhost:3000/auth/register`, data);
+    return this.http.post(`${environment["apiUrl"]}/auth/register`, data);
   }
 
   mfa() {
-    return this.http.get(`http://localhost:3000/auth/mfa`);
+    return this.http.get(`${environment["apiUrl"]}/auth/mfa`);
   }
 
   getAccountLogs() {
-    return this.http.get(`http://localhost:3000/auth/acc/logs`);
+    return this.http.get(`${environment["apiUrl"]}/auth/acc/logs`);
   }
 
   activateAccount(data) {
-    return this.http.post(`http://localhost:3000/auth/acc/act`, data);
+    return this.http.post(`${environment["apiUrl"]}/auth/acc/act`, data);
   }
 
   deactivateAccount(data) {
-    return this.http.post(`http://localhost:3000/auth/acc/deact`, data);
+    return this.http.post(`${environment["apiUrl"]}/auth/acc/deact`, data);
   }
 
   getMenuItems() {
-    return this.http.get(`http://localhost:3000/auth/items`);
+    return this.http.get(`${environment["apiUrl"]}/auth/items`);
   }
 
   // Records DB
   recordRegister(data) {
-    return this.http.post(`http://localhost:3000/records/reg`, data);
+    return this.http.post(`${environment["apiUrl"]}/records/reg`, data);
   }
 
   getProfile() {
-    return this.http.get(`http://localhost:3000/records/profile`);
+    return this.http.get(`${environment["apiUrl"]}/records/profile`);
   }
 
   uploadCovidTest(data) {
-    return this.http.post(`http://localhost:3000/records/upload_test`, data);
+    return this.http.post(`${environment["apiUrl"]}/records/upload_test`, data);
   }
 
   getCovidTest() {
-    return this.http.get(`http://localhost:3000/records/test_history`);
+    return this.http.get(`${environment["apiUrl"]}/records/test_history`);
   }
 
   uploadHealthDeclaration(data) {
-    return this.http.post(`http://localhost:3000/records/upload_declaration`, data);
+    return this.http.post(`${environment["apiUrl"]}/records/upload_declaration`, data);
   }
 
   getHealthDeclarationHistory() {
-    return this.http.get(`http://localhost:3000/records/declaration_history`);
+    return this.http.get(`${environment["apiUrl"]}/records/declaration_history`);
   }
 
   getRecordLogs() {
-    return this.http.get(`http://localhost:3000/records/record_logs`);
+    return this.http.get(`${environment["apiUrl"]}/records/record_logs`);
   }
 
   uploadVaccinationStatus(data) {
-    return this.http.post(`http://localhost:3000/records/upload_vaccination`, data);
+    return this.http.post(`${environment["apiUrl"]}/records/upload_vaccination`, data);
   }
 
   getVaccinationStatus(data) {
-    return this.http.post(`http://localhost:3000/records/vaccination_history`, data);
+    return this.http.post(`${environment["apiUrl"]}/records/vaccination_history`, data);
   }
 
   getCovidDashboard() {
-    return this.http.get(`http://localhost:3000/records/covid_dashboard`);
+    return this.http.get(`${environment["apiUrl"]}/records/covid_dashboard`);
+  }
+
+  query(data) {
+    return this.http.post(`${environment["apiUrl"]}/records/statistics`, data);
   }
 
   // Check authentication

@@ -7,7 +7,7 @@ import { DataService } from 'app/data.service';
 })
 export class HealthDeclarationComponent implements OnInit {
   date;
-  symptoms;
+  symptoms = "0";
   temperature;
 
   constructor(private dataService: DataService) { }
@@ -17,8 +17,8 @@ export class HealthDeclarationComponent implements OnInit {
 
   onSubmit() {
     let data = {
-      covid_symptoms: parseInt(this.symptoms),
-      temperature: parseFloat(this.temperature)
+      covid_symptoms: this.symptoms,
+      temperature: this.temperature
     }
     this.dataService.uploadHealthDeclaration(data).subscribe((res: any) => {
       console.log(res);

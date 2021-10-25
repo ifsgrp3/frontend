@@ -14,8 +14,8 @@ import { DataService } from 'app/data.service';
 export class Covid19TestComponent implements OnInit {
 
     form: any;
-    result;
-    type;
+    result = "0";
+    type = "0";
 
     constructor(
         private dataService: DataService) { }
@@ -35,11 +35,7 @@ export class Covid19TestComponent implements OnInit {
         //     // this._services.markFormGroupTouched(this.form);
         //     return;
         // }
-    this.dataService.getProfile()
-      .subscribe((res: any) => {
-        console.log(res)
         let data = {
-            nric: res.data[0].nric,
             covid19_test_type: this.type,
             test_result: this.result
         }
@@ -49,7 +45,6 @@ export class Covid19TestComponent implements OnInit {
       }, (err) => {
         console.log(err)
       })
-    })
     }
 
 }

@@ -24,7 +24,7 @@
                                 <tbody>
                                     <tr *ngFor="let h of history">
                                         <td>
-                                            1
+                                            {{ h.test_id }}
                                         </td>
                                         <td>
                                             {{ (h.test_result === 1 || h.test_result === "1")? "Positive": "Negative" }}

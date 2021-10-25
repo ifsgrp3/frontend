@@ -27,6 +27,8 @@ import { AccountLoggingComponent } from 'app/logs/account-logs/account-logs.comp
 import { RecordLoggingComponent } from 'app/logs/record-logs/record-logs.component';
 import { VaccinationStatusComponent } from 'app/vaccination-status/vaccination-status.component';
 import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-declaration/covid19-declaration.component';
+import { StatisticsComponent } from 'app/statistics/statistics.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -40,6 +42,7 @@ import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-decl
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    NgxPaginationModule
   ],
   declarations: [
     DashboardComponent,
@@ -58,7 +61,8 @@ import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-decl
     AccountLoggingComponent,
     RecordLoggingComponent,
     VaccinationStatusComponent,
-    Covid19DeclarationComponent
+    Covid19DeclarationComponent,
+    StatisticsComponent
   ]
 })
 

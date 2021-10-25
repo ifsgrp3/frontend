@@ -11,11 +11,13 @@ import { MultiFactorAuthenticationComponent } from './mfa/mfa.component';
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'user-profile',
+    redirectTo: 'news',
     pathMatch: 'full',
   },
   { path: 'login', component: LoginPageComponent },
-  { path: 'mfa', component: MultiFactorAuthenticationComponent },
+  { path: 'mfa',
+    canActivate: [IsAuthenticatedGuard], 
+    component: MultiFactorAuthenticationComponent },
   {
     path: '',
     component: AdminLayoutComponent,

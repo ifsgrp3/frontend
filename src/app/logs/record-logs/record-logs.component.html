@@ -18,31 +18,19 @@
                                         Action
                                     </th>
                                     <th>
-                                        Table Affected
-                                    </th>
-                                    <th>
-                                        USer NRIC
-                                    </th>
-                                    <th>
                                         Date and Time
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let l of logs">
+                                    <tr *ngFor="let l of logs; let i = index;">
                                         <td>
-                                            {{ l.record_id }}
+                                            {{ i + 1 }}
                                         </td>
                                         <td>
-                                            {{ l.action_made }}
+                                            {{ l.activity }}
                                         </td>
                                         <td>
-                                            {{ l.table_affected }}
-                                        </td>
-                                        <td>
-                                            {{ l.user_nric }}
-                                        </td>
-                                        <td>
-                                            {{ l.date_time }}
+                                            {{ l.log_time }}
                                         </td>
                                     </tr>
                                 </tbody>
