@@ -18,6 +18,12 @@ export class IsAuthenticatedGuard implements CanActivate {
     if (!isAuthenticated) {
       localStorage.clear();
       this.router.navigate(['/login']);
+      // this.dataService.logout().subscribe((res: any) => {
+      //   localStorage.clear();
+      //   console.log("Bye");
+      //   this.router.navigate(['/login']);
+      //   window.location.reload();
+      // })
     }
     return isAuthenticated;
   }

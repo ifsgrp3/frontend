@@ -20,6 +20,7 @@ import { AccountLoggingComponent } from 'app/logs/account-logs/account-logs.comp
 import { RecordLoggingComponent } from 'app/logs/record-logs/record-logs.component';
 import { VaccinationStatusComponent } from 'app/vaccination-status/vaccination-status.component';
 import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-declaration/covid19-declaration.component';
+import { UpdateComponent } from 'app/components/update/update.conponent';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -83,5 +84,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'account-logs', component: AccountLoggingComponent},
     { path: 'record-logs', component: RecordLoggingComponent},
     { path: 'vaccination', component: VaccinationStatusComponent},
-    { path: 'covid-declaration', component: Covid19DeclarationComponent}
+    { path: 'covid-declaration', component: Covid19DeclarationComponent},
+    { path: 'update', component: UpdateComponent }
 ];

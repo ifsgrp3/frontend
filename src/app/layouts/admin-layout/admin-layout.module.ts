@@ -29,6 +29,7 @@ import { VaccinationStatusComponent } from 'app/vaccination-status/vaccination-s
 import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-declaration/covid19-declaration.component';
 import { StatisticsComponent } from 'app/statistics/statistics.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UpdateComponent } from 'app/components/update/update.conponent';
 
 @NgModule({
   imports: [
@@ -62,7 +63,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RecordLoggingComponent,
     VaccinationStatusComponent,
     Covid19DeclarationComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    UpdateComponent
   ]
 })
 

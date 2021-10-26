@@ -22,6 +22,10 @@ export class DataService {
     return this.http.get(`${environment["apiUrl"]}/auth/accs`);
   }
 
+  getOneAccount(data) {
+    return this.http.post(`${environment["apiUrl"]}/auth/acc`, data);
+  }
+
   login(data) {
     return this.http.post(`${environment["apiUrl"]}/auth/login`, data);
   }
@@ -54,6 +58,18 @@ export class DataService {
     return this.http.get(`${environment["apiUrl"]}/auth/items`);
   }
 
+  changePassword(data) {
+    return this.http.put(`${environment["apiUrl"]}/auth/acc/pass`, data);
+  }
+
+  changeRole(data) {
+    return this.http.put(`${environment["apiUrl"]}/auth/acc/role`, data);
+  }
+
+  changeBle(data) {
+    return this.http.put(`${environment["apiUrl"]}/auth/acc/ble`, data);
+  }
+
   // Records DB
   recordRegister(data) {
     return this.http.post(`${environment["apiUrl"]}/records/reg`, data);
@@ -61,6 +77,14 @@ export class DataService {
 
   getProfile() {
     return this.http.get(`${environment["apiUrl"]}/records/profile`);
+  }
+
+  getOneProfile(data) {
+    return this.http.post(`${environment["apiUrl"]}/records/one_profile`, data);
+  }
+
+  getAddress(data) {
+    return this.http.post(`${environment["apiUrl"]}/records/get_address`, data);
   }
 
   uploadCovidTest(data) {
@@ -97,6 +121,34 @@ export class DataService {
 
   query(data) {
     return this.http.post(`${environment["apiUrl"]}/records/statistics`, data);
+  }
+
+  addUserAddress(data) {
+    return this.http.post(`${environment["apiUrl"]}/records/address`, data);
+  }
+
+  updateUserAddress(data) {
+    return this.http.put(`${environment["apiUrl"]}/records/address`, data);
+  }
+
+  updateNumber(data) {
+    return this.http.put(`${environment["apiUrl"]}/records/update_num`, data);
+  }
+
+  removeUser(data) {
+    return this.http.delete(`${environment["apiUrl"]}/records/user`, data);
+  }
+
+  updateNames(data) {
+    return this.http.put(`${environment["apiUrl"]}/records/user/names`, data);
+  }
+
+  updatePartiallyVaccinated(data) {
+    return this.http.put(`${environment["apiUrl"]}/records/update_vacc_partially`, data);
+  }
+
+  updateFullyVaccinated(data) {
+    return this.http.put(`${environment["apiUrl"]}/records/update_vacc_fully`, data);
   }
 
   // Check authentication

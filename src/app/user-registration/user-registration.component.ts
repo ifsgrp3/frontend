@@ -21,6 +21,7 @@ export class UserRegistrationComponent implements OnInit {
         first_name: new FormControl(null, Validators.required),
         last_name: new FormControl(null, Validators.required),
         address: new FormControl(null, Validators.required),
+        unit_number: new FormControl(null, Validators.required),
         area: new FormControl(null),
         zip_code: new FormControl(null),
         contact_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
@@ -47,8 +48,17 @@ export class UserRegistrationComponent implements OnInit {
       ble_serial_number: this.form.value.ble_serial_number,
       account_role: this.form.value.role
     }
+    let address = {
+      street_name: this.form.value.address,
+      unit_number: this.form.value.unit_number,
+      zip_code: this.form.value.zip_code,
+      area: this.form.value.area
+    }
     console.log(registerData)
     this.dataService.register(registerData).subscribe((res: any) => {
+      console.log(res);
+    })
+    this.dataService.addUserAddress(address).subscribe((res: any) => {
       console.log(res);
     })
   }
