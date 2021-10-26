@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DataService } from 'app/data.service';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class Covid19TestComponent implements OnInit {
 
     form: any;
+    result = "0";
+    type = "0";
 
     constructor(
-        ) { }
+        private dataService: DataService) { }
 
     ngOnInit() {
         this.initForm();
@@ -23,19 +26,25 @@ export class Covid19TestComponent implements OnInit {
 
     initForm() {
         this.form = new FormGroup({
-            name: new FormControl(null, Validators.required),
-            notAllow: new FormControl({ value: null, disabled: true }, Validators.required),
-            description: new FormControl(null),
-            email: new FormControl(null, [Validators.required, Validators.email]),
-            presetValue: new FormControl('Hello', Validators.required),
+            date: new FormControl(null, Validators.required)
         })
     }
 
     noSubmit() {
-        if (this.form.invalid) {
-            // this._services.markFormGroupTouched(this.form);
-            return;
+        // if (this.form.invalid) {
+        //     // this._services.markFormGroupTouched(this.form);
+        //     return;
+        // }
+        let data = {
+            covid19_test_type: this.type,
+            test_result: this.result
         }
+        this.dataService.uploadCovidTest(data)
+      .subscribe((res: any) => {
+        console.log(res)
+      }, (err) => {
+        console.log(err)
+      })
     }
 
 }

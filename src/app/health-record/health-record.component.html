@@ -18,52 +18,25 @@
                                         NRIC
                                     </th>
                                     <th>
-                                        Health Declaration
+                                        Temperature (C)
+                                    </th>
+                                    <th>
+                                        Symptoms
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let r of record; let i = index;">
                                         <td>
-                                            1
+                                            {{ i + 1 }}
                                         </td>
                                         <td>
-                                            S1234567A
+                                           {{ r.nric }}
                                         </td>
                                         <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
+                                            {{ r.temperature }}
                                         </td>
                                         <td>
-                                            S1234567A
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            S1234567A
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            S1234567A
-                                        </td>
-                                        <td>
-                                            sample text
+                                            {{ r.covid_symptoms === "1"? "Yes" : "No" }}
                                         </td>
                                     </tr>
                                 </tbody>

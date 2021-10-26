@@ -17,6 +17,7 @@
 <div class="main-content">
     <div class="m-portlet m-portlet--mobile">
         <div class="m-portlet__body">
+			<form [formGroup]="form">
 			<div class="m-form__section m-form__section--first">
 				<div class="form-group m-form__group row">
 					<div class="col-12">
@@ -28,53 +29,48 @@
 						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'First Name'  }}</label>
-								<input class="form-control m-input" formControlName="name" />
+								<input class="form-control m-input" formControlName="first_name" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'Last Name' }}</label>
-								<input class="form-control m-input"/>
+								<input class="form-control m-input" formControlName="last_name" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
 						</div>
 						<div class="row m--margin-top-20">
-							<div class="col-sm-12 col-lg-4 col-xl-4" >
+							<div class="col-sm-12 col-lg-3 col-xl-3" >
 								<label>{{ 'Address'  }}</label>
-								<input class="form-control m-input" formControlName="name" />
-								<span class="form-control-feedback" >
-									{{ 'This field is required'  }}
-								</span>
+								<input class="form-control m-input" formControlName="address" />
 							</div>
-							<div class="col-sm-12 col-lg-4 col-xl-4" >
+							<div class="col-sm-12 col-lg-3 col-xl-3" >
+								<label>{{ 'Unit number'  }}</label>
+								<input class="form-control m-input" formControlName="unit_number" />
+							</div>
+							<div class="col-sm-12 col-lg-3 col-xl-3" >
 								<label>{{ 'Area (NSEWC)' }}</label>
-								<input class="form-control m-input"/>
-								<span class="form-control-feedback" >
-									{{ 'This field is required'  }}
-								</span>
+								<input class="form-control m-input" formControlName="area"/>
 							</div>
-							<div class="col-sm-12 col-lg-4 col-xl-4" >
+							<div class="col-sm-12 col-lg-3 col-xl-3" >
 								<label>{{ 'Zip Code' }}</label>
-								<input class="form-control m-input"/>
-								<span class="form-control-feedback" >
-									{{ 'This field is required'  }}
-								</span>
+								<input class="form-control m-input" formControlName="zip_code"/>
 							</div>
 						</div>
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'Contact Number'  }}</label>
-								<input class="form-control m-input" formControlName="name" />
+								<input class="form-control m-input" formControlName="contact_number" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label style="width: 100%;">{{ 'Gender' }}</label>
-								<select style="width: 25%;" name="gender" id="gender">
+								<select style="width: 25%;" name="gender" id="gender" formControlName="gender">
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 								</select>
@@ -83,31 +79,40 @@
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'NRIC'  }}</label>
-								<input class="form-control m-input" formControlName="name" />
+								<input class="form-control m-input" formControlName="nric" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label style="width: 100%;">{{ 'Role' }}</label>
-								<select style="width: 50%;" name="roler" id="role">
-									<option value="public">Public</option>
-									<option value="admin">System Admin</option>
-									<option value="personnel">COVID-19 Personnel</option>
+								<select style="width: 50%;" name="roler" id="role" formControlName="role">
+									<option value="3">Public</option>
+									<option value="1">System Admin</option>
+									<option value="2">COVID-19 Personnel</option>
 								</select>
 							</div>
 						</div>
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label>{{ 'Race'  }}</label>
-								<input class="form-control m-input" formControlName="name" />
+								<input class="form-control m-input" formControlName="race" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Token Device ID' }}</label>
-								<input class="form-control m-input"/>
+								<label>{{ 'BLE Device Serial Number' }}</label>
+								<input class="form-control m-input" formControlName="ble_serial_number"/>
+								<span class="form-control-feedback" >
+									{{ 'This field is required'  }}
+								</span>
+							</div>
+						</div>
+						<div class="row m--margin-top-20">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label>{{ 'Password'  }}</label>
+								<input class="form-control m-input" type="password" formControlName="password" />
 								<span class="form-control-feedback" >
 									{{ 'This field is required'  }}
 								</span>
@@ -115,7 +120,7 @@
 						</div>
 						<div class="row m--margin-top-20">
 							<div class="col-sm-12 col-lg-6 col-xl-6 m--align-right top-sticky">
-								<button class="btn btn-primary m-btn">
+								<button class="btn btn-primary m-btn" (click)="onSubmit()">
 									{{ 'Submit' }}
 								</button>
 							</div>
@@ -123,6 +128,7 @@
 					</div>
 				</div>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

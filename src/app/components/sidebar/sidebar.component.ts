@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'app/data.service';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -37,10 +38,13 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    // this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.dataService.getMenuItems().subscribe((res: any) => {
+      this.menuItems = res.data;
+    })
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

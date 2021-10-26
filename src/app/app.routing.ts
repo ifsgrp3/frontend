@@ -4,15 +4,24 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LoginPageComponent } from './login/login-page.component';
+import { IsAuthenticatedGuard } from './is-authenticated.guard';
+import { MultiFactorAuthenticationComponent } from './mfa/mfa.component';
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'news',
     pathMatch: 'full',
-  }, {
+  },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'mfa',
+    canActivate: [IsAuthenticatedGuard], 
+    component: MultiFactorAuthenticationComponent },
+  {
     path: '',
     component: AdminLayoutComponent,
+    canActivate: [IsAuthenticatedGuard],
     children: [{
       path: '',
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)

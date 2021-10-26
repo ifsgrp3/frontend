@@ -12,88 +12,25 @@
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        Serial Number
+                                        Record ID
                                     </th>
                                     <th>
                                         Action
-                                    </th>
-                                    <th>
-                                        Table Affected
-                                    </th>
-                                    <th>
-                                        USer NRIC
                                     </th>
                                     <th>
                                         Date and Time
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let l of logs; let i = index;">
                                         <td>
-                                            1
+                                            {{ i + 1 }}
                                         </td>
                                         <td>
-                                            sample text
+                                            {{ l.activity }}
                                         </td>
                                         <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
+                                            {{ l.log_time }}
                                         </td>
                                     </tr>
                                 </tbody>

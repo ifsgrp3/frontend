@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Account Logs</h4>
+                        <h4 class="card-title ">Account Management</h4>
                         <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                     </div>
                     <div class="card-body">
@@ -18,94 +18,25 @@
                                         NRIC
                                     </th>
                                     <th>
-                                        Address
-                                    </th>
-                                    <th>
-                                        Contact Number
+                                        Account role
                                     </th>
                                     <th>
                                         Account status
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let a of accounts; let i = index;">
                                         <td>
-                                            1
+                                            {{ i + 1 }}
                                         </td>
                                         <td>
-                                            Negative
+                                            {{ a.nric }}
                                         </td>
                                         <td>
-                                            sample text
+                                            {{ a.account_role == 1? "Admin" : (a.account_role == 2)? "COVID Personnel": "Public user" }}
                                         </td>
                                         <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Negative
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Negative
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Positive
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                        <td>
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
+                                            {{ a.account_status == "1"? "Active" : "Inactive" }}
                                         </td>
                                     </tr>
                                 </tbody>

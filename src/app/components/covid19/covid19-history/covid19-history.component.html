@@ -22,48 +22,15 @@
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let h of history">
                                         <td>
-                                            1
+                                            {{ h.test_id }}
                                         </td>
                                         <td>
-                                            Negative
+                                            {{ (h.test_result === 1 || h.test_result === "1")? "Positive": "Negative" }}
                                         </td>
                                         <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Negative
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Negative
-                                        </td>
-                                        <td>
-                                            sample text
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Positive
-                                        </td>
-                                        <td>
-                                            sample text
+                                            {{ h.test_date }}
                                         </td>
                                     </tr>
                                 </tbody>

@@ -11,7 +11,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { Covid19TestComponent } from 'app/components/covid19/covid19-test/covid19-test.component';
 import { Covid19HistoryComponent } from 'app/components/covid19/covid19-history/covid19-history.component';
 import { HealthDeclarationComponent } from 'app/health-declaration/health-declaration.component';
-import { HealtRecordComponent } from 'app/health-record/health-record.component';
+import { HealthRecordComponent } from 'app/health-record/health-record.component';
 import { StatisticsComponent } from 'app/statistics/statistics.component';
 import { NewsComponent } from 'app/news/news.component';
 import { AccountsComponent } from 'app/accounts/accounts.component';
@@ -20,6 +20,7 @@ import { AccountLoggingComponent } from 'app/logs/account-logs/account-logs.comp
 import { RecordLoggingComponent } from 'app/logs/record-logs/record-logs.component';
 import { VaccinationStatusComponent } from 'app/vaccination-status/vaccination-status.component';
 import { Covid19DeclarationComponent } from 'app/components/covid19/covid19-declaration/covid19-declaration.component';
+import { UpdateComponent } from 'app/components/update/update.conponent';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -75,7 +76,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'covid-test',     component: Covid19TestComponent},
     { path: 'covid-history',     component: Covid19HistoryComponent},
     { path: 'health-declaration', component: HealthDeclarationComponent},
-    { path: 'health-record', component: HealtRecordComponent},
+    { path: 'health-record', component: HealthRecordComponent},
     { path: 'statistics', component: StatisticsComponent},
     { path: 'news', component: NewsComponent},
     { path: 'accounts', component: AccountsComponent},
@@ -83,5 +84,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'account-logs', component: AccountLoggingComponent},
     { path: 'record-logs', component: RecordLoggingComponent},
     { path: 'vaccination', component: VaccinationStatusComponent},
-    { path: 'covid-declaration', component: Covid19DeclarationComponent}
+    { path: 'covid-declaration', component: Covid19DeclarationComponent},
+    { path: 'update', component: UpdateComponent }
 ];
