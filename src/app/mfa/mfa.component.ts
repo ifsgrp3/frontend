@@ -16,10 +16,10 @@ export class MultiFactorAuthenticationComponent implements OnInit {
   }
 
   authenticate() {
-    // this.dataService.mfa().subscribe((res: any) => {
-    //   console.log(res);
-    //   this.router.navigate(['/']);
-    // })
-    this.router.navigate(['/']);
+    this.dataService.mfa().subscribe((res: any) => {
+      console.log(res);
+      this.router.navigate(['/']);
+    })
+    // this.router.navigate(['/']);
   }
 }
