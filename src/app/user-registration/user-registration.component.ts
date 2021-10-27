@@ -49,6 +49,7 @@ export class UserRegistrationComponent implements OnInit {
       account_role: this.form.value.role
     }
     let address = {
+      nric: this.form.value.nric,
       street_name: this.form.value.address,
       unit_number: this.form.value.unit_number,
       zip_code: this.form.value.zip_code,

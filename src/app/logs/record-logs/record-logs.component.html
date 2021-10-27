@@ -18,6 +18,9 @@
                                         Action
                                     </th>
                                     <th>
+                                        Table Affected
+                                    </th>
+                                    <th>
                                         Date and Time
                                     </th>
                                 </thead>
@@ -27,10 +30,13 @@
                                             {{ i + 1 }}
                                         </td>
                                         <td>
-                                            {{ l.activity }}
+                                            {{ l.action_made }}
                                         </td>
                                         <td>
-                                            {{ l.log_time }}
+                                            {{ l.table_affected }}
+                                        </td>
+                                        <td>
+                                            {{ l.date_time }}
                                         </td>
                                     </tr>
                                 </tbody>
