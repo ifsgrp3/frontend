@@ -60,6 +60,15 @@
     <div class="row" *ngIf="option == 'cases' && cases">
         <p style="padding-left: 20px;">COVID-19 Cases with this filter is {{ cases}} cases</p>
     </div> 
+    <div class="row" style="padding-left: 20px;">
+        <p>The accuracy of this data set is as follows:</p>
+    </div>
+    <div class="row" style="padding-left: 20px;">
+        <ul>
+            <li>K anonymity = 5</li>
+            <li>NCP = 9.51%</li>
+        </ul>
+    </div>
     <br>
     <div class="card">
         <div class="card-header card-header-danger">
