@@ -21,6 +21,7 @@ export class VaccinationStatusComponent implements OnInit {
   }
 
   onSubmit() {
+    this.data.nric = this.data.nric.toLowerCase();
     this.dataService.uploadVaccinationStatus(this.data).subscribe((res: any) => {
       console.log(res);
     })

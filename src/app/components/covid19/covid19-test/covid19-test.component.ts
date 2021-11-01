@@ -16,6 +16,7 @@ export class Covid19TestComponent implements OnInit {
     form: any;
     result = "0";
     type = "0";
+    nric;
 
     constructor(
         private dataService: DataService) { }
@@ -35,7 +36,9 @@ export class Covid19TestComponent implements OnInit {
         //     // this._services.markFormGroupTouched(this.form);
         //     return;
         // }
+        this.nric = this.nric.toLowerCase();
         let data = {
+            nric: this.nric,
             covid19_test_type: this.type,
             test_result: this.result
         }

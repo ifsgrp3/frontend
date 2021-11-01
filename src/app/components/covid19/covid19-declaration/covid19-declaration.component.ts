@@ -7,13 +7,21 @@ import { DataService } from 'app/data.service';
 })
 export class Covid19DeclarationComponent implements OnInit {
   record;
+  nric; 
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getCovidDashboard().subscribe((res: any) => {
       this.record = res.data;
-      console.log(this.record)
+    })
+  }
+
+  search(nric) {
+    this.dataService.getCovidDashboard().subscribe((res: any) => {
+      this.record = res.data;
+      console.log("Hello");
+      this.record = this.record.filter(r => r.nric == nric.toLowerCase())
     })
   }
 

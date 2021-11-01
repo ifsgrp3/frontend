@@ -163,4 +163,14 @@ export class DataService {
       return false;
     }
   }
+
+  // Check logged in
+  isLoggedIn() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn == '1') {
+        return true;
+      } else {
+        return false;
+      }
+  }
 }
