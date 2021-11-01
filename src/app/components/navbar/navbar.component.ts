@@ -129,7 +129,6 @@ export class NavbarComponent implements OnInit {
         if (localStorage.getItem("token")) {
             this.dataService.logout().subscribe((res: any) => {
                 localStorage.clear();
-                console.log("Bye");
                 this.router.navigate(["/login"]);
             })
         }

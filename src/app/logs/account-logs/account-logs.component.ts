@@ -7,6 +7,7 @@ import { DataService } from 'app/data.service';
 })
 export class AccountLoggingComponent implements OnInit {
   logs;
+  nric;
 
   constructor(private dataService: DataService) { }
 
@@ -14,6 +15,10 @@ export class AccountLoggingComponent implements OnInit {
     this.dataService.getAccountLogs().subscribe((res: any) => {
       this.logs = res.data;
     })
+  }
+
+  search() {
+    
   }
 
 }

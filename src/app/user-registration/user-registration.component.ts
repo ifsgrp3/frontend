@@ -30,12 +30,14 @@ export class UserRegistrationComponent implements OnInit {
         role: new FormControl(null),
         race: new FormControl(null, Validators.required),
         ble_serial_number: new FormControl(null, Validators.required),
-        password: new FormControl(null, Validators.required)
+        password: new FormControl(null, Validators.required),
+        date_of_birth: new FormControl(null, Validators.required),
+        age: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
     })
   }
 
   onSubmit() {
-    this.form.value.gender = (this.form.value.gender == "Male")? 0 : 1
+    this.form.value.gender = (this.form.value.gender == "Male")? "0" : "1"
     this.dataService.recordRegister(this.form.value).subscribe((res: any) => {
       console.log(res);
     })

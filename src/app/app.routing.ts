@@ -7,6 +7,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginPageComponent } from './login/login-page.component';
 import { IsAuthenticatedGuard } from './is-authenticated.guard';
 import { MultiFactorAuthenticationComponent } from './mfa/mfa.component';
+import { IsLoggedInGuard } from './is-logged-in-guard';
 
 const routes: Routes =[
   {

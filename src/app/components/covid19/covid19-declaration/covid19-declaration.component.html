@@ -8,6 +8,12 @@
                         <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                     </div>
                     <div class="card-body">
+                        <div class="row" style="padding-left: 20px;">
+                            <input class="form-control m-input" type="text" placeholder="Enter NRIC..." [(ngModel)]="nric">
+                            <button class="btn btn-primary m-btn" (click)="search(nric)">
+                                {{ 'Search' }}
+                            </button>
+                        </div>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">

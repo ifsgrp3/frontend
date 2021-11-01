@@ -27,26 +27,23 @@
 						</div> -->
 						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Date of test (YYYY-MM-DD)'  }} *</label>
-								<input class="form-control m-input" formControlName="date" />
-								<span class="form-control-feedback" >
-									{{ 'This field is required'  }}
-								</span>
+								<label style="width: 100%;">{{ 'NRIC' }}</label>
+								<input type="text" class="form-control m-input" [(ngModel)]="nric">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-lg-6 col-xl-6" >
+								<label style="width: 100%;">{{ 'Test Result' }}</label>
+								<select [(ngModel)]="type">
+									<option value="0">Type 1</option>
+									<option value="1">Type 2</option>
+								</select>
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label style="width: 100%;">{{ 'Test Result' }}</label>
 								<select [(ngModel)]="result">
 									<option value="1">Positive</option>
 									<option value="0">Negative</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label style="width: 100%;">{{ 'Test Type' }}</label>
-								<select [(ngModel)]="type">
-									<option value="0">Type 1</option>
-									<option value="1">Type 2</option>
 								</select>
 							</div>
 						</div>

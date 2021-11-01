@@ -15,7 +15,6 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    console.log(environment)
   }
   // Credentials DB
   getAllAccounts() {
@@ -162,5 +161,15 @@ export class DataService {
     catch (ex) {
       return false;
     }
+  }
+
+  // Check logged in
+  isLoggedIn() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn == '1') {
+        return true;
+      } else {
+        return false;
+      }
   }
 }

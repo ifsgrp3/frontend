@@ -13,7 +13,7 @@ export class RecordLoggingComponent implements OnInit {
   ngOnInit() {
     this.dataService.getRecordLogs().subscribe((res: any) => {
       this.logs = res.data;
-      console.log(this.logs)
+      // console.log(this.logs)
     })
   }
 

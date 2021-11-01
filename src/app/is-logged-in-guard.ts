@@ -5,7 +5,7 @@ import { DataService } from './data.service';
 @Injectable({
   providedIn: 'root'
 })
-export class IsAuthenticatedGuard implements CanActivate {
+export class IsLoggedInGuard implements CanActivate {
   constructor(
     private dataService: DataService,
     private router: Router
@@ -14,15 +14,17 @@ export class IsAuthenticatedGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const isAuthenticated = this.dataService.isAuthenticated();
-    if (!isAuthenticated) {
-      localStorage.clear();
-      this.router.navigate(['/login']);
-      // this.dataService.logout().subscribe((res: any) => {
-      //   localStorage.clear();
-      //   this.router.navigate(['/login']);
-      // })
+    const isLoggedIn = this.dataService.isLoggedIn();
+    if (!isLoggedIn) {
+      localStorage.removeItem('isLoggedIn')
+      this.router.navigate(['/mfa']);
+    //   this.dataService.logout().subscribe((res: any) => {
+    //     localStorage.clear();
+    //     console.log("Bye");
+    //     this.router.navigate(['/login']);
+    //     window.location.reload();
+    //   })
     }
-    return isAuthenticated;
+    return isLoggedIn;
   }
 }
