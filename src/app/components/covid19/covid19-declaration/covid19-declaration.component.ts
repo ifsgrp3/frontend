@@ -20,7 +20,6 @@ export class Covid19DeclarationComponent implements OnInit {
   search(nric) {
     this.dataService.getCovidDashboard().subscribe((res: any) => {
       this.record = res.data;
-      console.log("Hello");
       this.record = this.record.filter(r => r.nric == nric.toLowerCase())
     })
   }

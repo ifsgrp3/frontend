@@ -23,13 +23,13 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.dataService.getProfile()
       .subscribe((res: any) => {
-        console.log(res)
+        // console.log(res)
         this.record.name = res.data[0].first_name + " " + res.data[0].last_name;
         this.record.age = res.data[0].age;
         this.record.number = res.data[0].contact_number;
         this.record.birth = res.data[0].date_of_birth;
         this.record.race = res.data[0].race;
-        this.record.address = res.data[0].address;
+        this.record.address = res.data[0].street_name;
       }, err => {
         console.log(err)
       })

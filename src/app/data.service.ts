@@ -15,7 +15,6 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    console.log(environment)
   }
   // Credentials DB
   getAllAccounts() {
