@@ -19,21 +19,21 @@ export class UserRegistrationComponent implements OnInit {
 
   initForm() {
     this.form = new FormGroup({
-        first_name: new FormControl(null, Validators.required),
-        last_name: new FormControl(null, Validators.required),
-        address: new FormControl(null, Validators.required),
-        unit_number: new FormControl(null, Validators.required),
+        first_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
+        last_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
+        address: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
+        unit_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(3)]),
         area: new FormControl(null),
-        zip_code: new FormControl(null),
-        contact_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
-        gender: new FormControl(null, Validators.required),
-        nric: new FormControl(null, Validators.required),
+        zip_code: new FormControl(null,[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(6)]),
+        contact_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(9)]),
+        gender: new FormControl(null),
+        nric: new FormControl(null, [Validators.required,Validators.maxLength(9),Validators.minLength(9),Validators.pattern("^[a-zA-Z0-9]*$")]), 
         role: new FormControl(null),
         race: new FormControl(null, Validators.required),
         ble_serial_number: new FormControl(null, Validators.required),
         password: new FormControl(null, Validators.required),
         date_of_birth: new FormControl(null, Validators.required),
-        age: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
+        age: new FormControl(null, [Validators.required, [Validators.pattern("^[0-9]*$"),Validators.maxLength(3)])
     })
   }
 
