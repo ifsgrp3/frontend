@@ -119,8 +119,14 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
-								<label>{{ 'Area'  }}</label>
-								<input class="form-control m-input" formControlName="area" />
+								<label style="width: 100%;">{{ 'Area (NSEWC)' }}</label>
+								<select style="width: 30%;" name="area" id="area" formControlName="area">
+									<option value="north">north</option>
+									<option value="south">south</option>
+									<option value="east">east</option>
+									<option value="west">west</option>
+									<option value="central">central</option>
+								</select>	
 							</div>
 							<div class="col-sm-12 col-lg-6 col-xl-6" >
 								<label style="width: 100%;">{{ 'Vaccination status'  }}</label>
