@@ -22,7 +22,7 @@ export class UserRegistrationComponent implements OnInit {
         first_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
         last_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
         address: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
-        unit_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(3)]),
+        unit_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(5)]),
         area: new FormControl(null),
         zip_code: new FormControl(null,[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(6)]),
         contact_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(9)]),
