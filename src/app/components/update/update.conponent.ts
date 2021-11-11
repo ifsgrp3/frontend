@@ -20,19 +20,19 @@ export class UpdateComponent implements OnInit {
 
   initForm() {
     this.form = new FormGroup({
-        first_name: new FormControl(null),
-        last_name: new FormControl(null),
-        street_name: new FormControl(null),
-        unit_number: new FormControl(null),
+        first_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
+        last_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
+        street_name: new FormControl(null, [Validators.required,Validators.pattern("^[a-zA-Z0-9]*$")]),
+        unit_number: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(5)]),
         area: new FormControl(null),
-        zip_code: new FormControl(null),
-        contact_number: new FormControl(null, Validators.pattern("^[0-9]*$")),
+        zip_code: new FormControl(null,[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(6)]),
+        contact_number:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(9)]),
         gender: new FormControl(null),
         nric: new FormControl(null),
         account_role: new FormControl(null),
         race: new FormControl(null),
         ble_serial_number: new FormControl(null),
-        password: new FormControl(null)
+        password: new FormControl(null, Validators.required)
     })
   }
 
