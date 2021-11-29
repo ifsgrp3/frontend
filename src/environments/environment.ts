@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://group3-1-i.comp.nus.edu.sg:5436',
+  apiUrl: 'http://group3-1-i.comp.nus.edu.sg:5436',
   JWT_KEY: "ifsgrp3ifs4205"
 };

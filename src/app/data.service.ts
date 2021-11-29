@@ -180,7 +180,7 @@ export class DataService {
   // Check logged in
   isAuthenticated() {
     try {
-      const token = this.decryptData(localStorage.getItem('token'));
+      const token = this.decryptData(sessionStorage.getItem('token'));
       const decodedToken = helper.decodeToken(token);
       const isExpired = helper.isTokenExpired(token);
       return !!decodedToken && !isExpired;
@@ -191,7 +191,7 @@ export class DataService {
   }
 
   isLoggedIn() {
-      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
       if (isLoggedIn == '1') {
         return true;
       } else {
@@ -200,7 +200,7 @@ export class DataService {
   }
 
   isAdmin() {
-    const token = this.decryptData(localStorage.getItem('token'));
+    const token = this.decryptData(sessionStorage.getItem('token'));
     const decodedToken = helper.decodeToken(token);
     if(decodedToken["account_role"] == 1) {
       return true;
@@ -210,7 +210,7 @@ export class DataService {
   }
 
   isPublicUser() {
-    const token = this.decryptData(localStorage.getItem('token'));
+    const token = this.decryptData(sessionStorage.getItem('token'));
     const decodedToken = helper.decodeToken(token);
     if (decodedToken["account_role"] == 3) {
       return true;
@@ -220,7 +220,7 @@ export class DataService {
   }
 
   isCovidPersonnel() {
-    const token = this.decryptData(localStorage.getItem('token'));
+    const token = this.decryptData(sessionStorage.getItem('token'));
     const decodedToken = helper.decodeToken(token);
     if (decodedToken["account_role"] == 2) {
       return true;

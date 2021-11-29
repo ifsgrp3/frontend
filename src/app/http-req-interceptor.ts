@@ -20,10 +20,10 @@ export class HttpReqInterceptor implements HttpInterceptor {
     ) { }
 intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let modifiedReq = req.clone({});
-        if (localStorage.getItem('token')) {
+        if (sessionStorage.getItem('token')) {
             modifiedReq = modifiedReq.clone({
                 setHeaders: {
-                    authorization: localStorage.getItem('token')
+                    authorization: sessionStorage.getItem('token')
                 }
             });
         }
